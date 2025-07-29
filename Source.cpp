@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cryptopp/cryptlib.h>
+
 int main() {
 	// Declare a variable of type int
 	int number = 42;
