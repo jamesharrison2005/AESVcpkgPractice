@@ -8,7 +8,6 @@ AESEncryptionCBC::AESEncryptionCBC()
 {
     GenerateKey(prng, key);
     GenerateIV(prng, iv);
-    DisplayKey(key, encoder);
 }
 
 AESEncryptionCBC::~AESEncryptionCBC()
@@ -68,12 +67,4 @@ SecByteBlock AESEncryptionCBC::GenerateIV(AutoSeededRandomPool& prng, SecByteBlo
 {
     prng.GenerateBlock(iv, iv.size());
     return iv;
-}
-
-void AESEncryptionCBC::DisplayKey(SecByteBlock& key, HexEncoder& encoder)
-{
-    std::cout << "key: ";
-    encoder.Put(key, key.size());
-    encoder.MessageEnd();
-    std::cout << std::endl;
 }

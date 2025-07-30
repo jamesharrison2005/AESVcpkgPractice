@@ -25,5 +25,4 @@ public:
 	std::string Decrypt(const std::string& cipherText);
 	static SecByteBlock GenerateKey(AutoSeededRandomPool& prng, SecByteBlock& key);
 	static SecByteBlock GenerateIV(AutoSeededRandomPool& prng, SecByteBlock& iv);
-	void DisplayKey(SecByteBlock& key, HexEncoder& encoder);
 };

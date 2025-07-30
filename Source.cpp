@@ -2,17 +2,11 @@
 #include "AESEncryption.h"
 
 std::string EnterText();
+void Menu();
 
 int main()
 {
-
-	std::string plainText;
-	AESEncryptionCBC AES;
-	plainText = EnterText();
-	plainText = AES.Encrypt(plainText);
-	std::cout << "Encrypted text: " << plainText << std::endl;
-	std::string decryptedText = AES.Decrypt(plainText);
-	std::cout << "Decrypted text: " << decryptedText << std::endl;
+	Menu();
 
 	return 0;
 }
@@ -29,4 +23,28 @@ std::string EnterText()
 	}
 
 	return text;
+}
+
+void Menu()
+{
+	std::cout << "Welcome to the AES Encryption Test" << std::endl;
+	std::cout << "This program will encrypt and decrypt a text using AES CBC mode." << std::endl;
+	std::cout << "Please enter the text you want to encrypt below or type (done) to exit." << std::endl;
+	while (true)
+	{
+		std::string plainText;
+		AESEncryptionCBC AES;
+		plainText = EnterText();
+		if (plainText == "done")
+		{
+			break;
+		}else 
+		{
+			plainText = AES.Encrypt(plainText);
+			std::cout << "Encrypted text: " << plainText << std::endl;
+			std::string decryptedText = AES.Decrypt(plainText);
+			std::cout << "Decrypted text: " << decryptedText << std::endl;
+		}
+	}
+	
 }
