@@ -35,6 +35,7 @@ void Menu()
 		std::string plainText;
 		AESEncryptionCBC AES;
 		plainText = EnterText();
+		std::system("cls"); // Clear the console
 		if (plainText == "done")
 		{
 			break;
@@ -45,6 +46,7 @@ void Menu()
 			std::string decryptedText = AES.Decrypt(plainText);
 			std::cout << "Decrypted text: " << decryptedText << std::endl;
 		}
+		
 	}
 	
 }
